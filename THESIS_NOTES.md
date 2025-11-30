@@ -180,3 +180,26 @@ Evaluate the performance of a hybrid quantum neural network (HQNN) versus a clas
 **Outputs:**
 - `results/demo09/results_demo09_medical.json`  
 - `results/demo09/accuracy_demo09.png`  
+
+## Demo 10 — Energy Grid Optimization Using QAOA (Cirq)
+
+**Purpose:**  
+Apply QAOA to a simplified 4-node microgrid unit-commitment/transmission-cost minimization problem.
+
+**Microgrid Model:**  
+- 4 nodes (generators + loads)  
+- Weighted transmission edges  
+- Objective: maximize cut → minimize effective transmission strain  
+
+**Results:**  
+- **Classical optimum cost:** 7.0  
+- **QAOA estimate (p=1):** ~4.53  
+- Shallow QAOA recovers a meaningful but suboptimal grid partition  
+- Demonstrates quantum approximate optimization on energy-infrastructure problems  
+
+**Outputs:**  
+- `results/demo10/results_demo10_energy.json`  
+- `results/demo10/qaoa_energy_plot.png`  
+
+**Significance:**  
+Supports the thesis claim that quantum variational algorithms have potential application in energy infrastructure optimization, especially as problem sizes scale and depths increase.
