@@ -27,3 +27,47 @@
 **Purpose:**  
 Demonstrates how QAOA solves combinatorial optimization problems such as MaxCut.  
 This will appear in the Variational Algorithms chapter and hybrid quantum-classical optimization section.
+
+## Demo 04 — QSVM Anomaly Detection (Qiskit Machine Learning)
+
+- **Dataset:** Synthetic anomaly detection (2D features, 300 samples)
+- **Quantum Component:** Fidelity-based Quantum Kernel (FidelityQuantumKernel)
+- **Feature Map:** 2-parameter RY-based circuit with entanglement
+- **SVM:** Classical SVC with precomputed quantum kernel
+- **Metrics:**
+  - Accuracy: 1.000
+  - AUC: 1.000
+- **Outputs:**
+  - results/demo04/results_demo04_qsvm.json
+  - results/demo04/roc_demo04.png
+- **Purpose:** Demonstrates quantum-enhanced anomaly detection using kernel
+  methods. Fully compatible with legacy Qiskit ML, with parameterized feature
+  map matching classical feature dimension.
+
+## Demo 05 — Noise-Robust HQNN (Qiskit)
+
+- **Purpose:**  
+  Evaluate hybrid quantum neural network robustness under noise and compare against 
+  classical baseline. This supports the thesis claim that hybrid architectures can 
+  maintain meaningful performance despite noise.
+
+- **Tracks:**
+  - Noise-free HQNN  
+  - Noisy HQNN (depolarizing noise p=0.05)  
+  - HQNN + ZNE (if available)  
+  - Classical baseline (MLP)
+
+- **Results:**
+  - Noiseless HQNN accuracy: 0.50  
+  - Noisy HQNN accuracy: 0.55  
+  - ZNE: Not available  
+  - Classical baseline accuracy: 0.883  
+
+- **Outputs:**
+  - `results/demo05/results_demo05.json`
+  - `results/demo05/accuracy_demo05.png`
+
+- **Thesis Relevance:**  
+  Demonstrates the fragility of quantum models and the effectiveness of classical baselines. 
+  Sets the stage for Demo 06 & 07, which introduce cross-framework robustness and 
+  mitigation techniques.
