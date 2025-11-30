@@ -154,3 +154,29 @@ a variational hybrid quantum neural network (HQNN) with SPSA optimization.
 **Significance:**  
 Provides the core experimental evidence of hybrid training feasibility.  
 Completes the HQNN experimental suite (Demos 01–08).
+
+## Demo 09 — Medical Risk Classification (HQNN vs Classical)
+
+**Purpose:**  
+Evaluate the performance of a hybrid quantum neural network (HQNN) versus a classical logistic regression model on a small synthetic medical risk dataset (4 features: age, blood pressure, cholesterol, heart rate pattern).
+
+**Methods:**
+- HQNN implemented using Qiskit + AerSimulator  
+- SPSA optimization for hybrid training  
+- Binary cross-entropy loss  
+- Classical baseline: Logistic Regression (sklearn)
+
+**Results:**
+- HQNN Accuracy: ~0.49  
+- Classical Accuracy: ~0.99  
+- HQNN training curve shows noisy, SPSA-driven fluctuations between 0.42–0.53
+
+**Interpretation:**
+- Classical ML outperforms the shallow HQNN on structured, linearly separable data  
+- Demonstrates realistic limitations of quantum classifiers  
+- Highlights noise sensitivity and expressive constraints  
+- Reinforces the need for hybrid, domain-specific quantum methods
+
+**Outputs:**
+- `results/demo09/results_demo09_medical.json`  
+- `results/demo09/accuracy_demo09.png`  
