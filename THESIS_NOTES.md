@@ -71,3 +71,60 @@ This will appear in the Variational Algorithms chapter and hybrid quantum-classi
   Demonstrates the fragility of quantum models and the effectiveness of classical baselines. 
   Sets the stage for Demo 06 & 07, which introduce cross-framework robustness and 
   mitigation techniques.
+
+## Demo 06 — Cross-Framework Noise Benchmark (Qiskit, Cirq, PennyLane)
+
+**Purpose:**  
+Evaluate the consistency and noise sensitivity of the same quantum circuit 
+across three major quantum frameworks:
+- Qiskit Aer
+- Cirq
+- PennyLane
+
+This reveals simulator discrepancies, noise-model differences, and 
+hybrid reliability issues.
+
+**Circuit:**  
+2-qubit parity circuit with adjustable RY rotation.
+
+**Results:**
+- Qiskit (noiseless): ~0.014  
+- Qiskit (noisy): ~–0.010  
+- Cirq (noiseless): ~–0.027  
+- Cirq (noisy): ~–0.021  
+- PennyLane (noiseless/noisy): ~0.0  
+- ZNE: None (optional)
+
+**Outputs:**
+- `results/demo06/results_demo06.json`
+- `results/demo06/parity_demo06.png`
+
+**Significance:**  
+This demo highlights cross-framework inconsistencies under identical circuits, 
+showing why hybrid robustness and cross-platform analysis is central to the 
+Noise-Robust HQNN thesis.
+
+## Demo 07 — Cross-Platform Parity Consistency (Qiskit vs Cirq vs PennyLane)
+
+**Purpose:**  
+Evaluate consistency of expectation values across three major quantum frameworks using identical 2-qubit circuits.
+
+**Circuit:**  
+– H on qubit 1  
+– RY(θ) on qubit 0  
+– CNOT(0 → 1)  
+– θ = π/4  
+
+**Expectation values computed:**  
+⟨Z₀⟩, ⟨Z₁⟩, ⟨Z₀Z₁⟩, ⟨X₀X₁⟩  
+
+**Findings:**  
+- ⟨ZZ⟩ and ⟨XX⟩ match across all frameworks.  
+- ⟨Z₀⟩ and ⟨Z₁⟩ differ between Qiskit and Cirq/PennyLane due to qubit index ordering (endianness):
+  - Qiskit uses *little-endian*  
+  - Cirq & PennyLane use *big-endian*  
+- This discrepancy is important in hybrid systems because consistent indexing is essential for parity-based models (like HQNNs).  
+
+**Outputs:**  
+- `results/demo07/results_demo07.json`  
+- `results/demo07/parity_demo07.png`  
