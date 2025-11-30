@@ -203,3 +203,35 @@ Apply QAOA to a simplified 4-node microgrid unit-commitment/transmission-cost mi
 
 **Significance:**  
 Supports the thesis claim that quantum variational algorithms have potential application in energy infrastructure optimization, especially as problem sizes scale and depths increase.
+
+## Demo 11 — Cybersecurity Anomaly Detection (QSVM + HQNN)
+
+**Purpose:**  
+Evaluate quantum kernel methods (QSVM) and hybrid HQNN models on a small
+cybersecurity anomaly detection dataset. Demonstrates applicability of
+quantum ML to national-interest cyber defense tasks.
+
+**Dataset:**  
+Synthetic 4-feature network traffic set (entropy, timing variance, port
+randomness, flag irregularity).
+
+**Methods:**  
+- QSVM using FidelityQuantumKernel (4-dim parameterized feature map)  
+- HQNN using variational 4-qubit circuit + SPSA optimization  
+- Classical Logistic Regression baseline  
+
+**Results:**  
+- QSVM Accuracy: **0.844** (AUC: **0.906**)  
+- HQNN Accuracy: **0.544**  
+- Classical Accuracy: **0.978**  
+
+**Interpretation:**  
+QSVM significantly outperforms HQNN, suggesting quantum kernels can capture
+nonlinear patterns in cyber traffic, while shallow HQNN circuits struggle.
+Classical ML remains strongest, highlighting the need for hybrid,
+noise-aware quantum architectures.  
+
+**Outputs:**  
+- `results/demo11/results_demo11_cyber.json`  
+- `results/demo11/cyber_roc_demo11.png`  
+- `results/demo11/cyber_accuracy_demo11.png`  
