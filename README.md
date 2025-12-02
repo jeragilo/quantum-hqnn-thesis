@@ -41,12 +41,14 @@ Each demo is contained inside the demos/ folder.
 For example:
 
 cd demos/core
+
 python demo01_hqnn_toy_classifier.py
 
 
 Or for an industry demo:
 
 cd demos/industry
+
 python demo10_energy_qaoa.py
 
 
