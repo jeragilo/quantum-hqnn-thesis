@@ -104,5 +104,5 @@ Contact
 
 For inquiries or questions about the project:
 
-Email: [your email]
+
 GitHub: https://github.com/jeragilo/
